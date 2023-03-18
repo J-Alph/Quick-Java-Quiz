@@ -1,3 +1,47 @@
+
+header{
+    background-color: blueviolet;
+    padding: 5%;
+    text-align: center;
+
+}
+
 body{
     background-color: rgb(86, 232, 252);
+    justify-content: center;
+    height: 100%;
+    width: 100;
+    /* display: flex; */
+}
+
+.h4 {
+    text-align: left;
+    font-weight: 800;
+    font-size: large;
+}
+
+.timer{
+    text-align: right;
+
+}
+
+.button{
+    size: 20px;
+}
+.box{
+    width: 50%;
+    height: 200px;
+    background-color: orange;
+    border: 20px;
+    margin: 30px;
+}
+
+
+
+
+@media screen and (max-width: 450px){
+    body{
+        background-color: blue;
+    }
+    
 }
