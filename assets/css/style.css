@@ -11,7 +11,7 @@ body{
     justify-content: center;
     height: 100%;
     width: 100;
-    /* display: flex; */
+
 }
 
 .h4 {
@@ -31,22 +31,19 @@ body{
     size: 20px;
 }
 .box{
-    width: 50%;
+    width: 80%;
     height: 200px;
     background-color: orange;
     border: 20px;
-    margin: 30px;
+    margin: 30px 100px 20px;
     
 }
 
-.circle{
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    float: left;
-    margin-right: 50px;
-    background-color: chartreuse;
+.answerbutton{
+    background-color: greenyellow;
+    
 }
+
 
 
 
