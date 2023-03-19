@@ -1,5 +1,10 @@
 var startBtn = document.body.querySelector("#start-btn");
-var timeSpan = document.body.querySelector("#zerotime");
+var timeSpan = document.querySelector("#zerotime");
+var circlegrab = document.querySelector("#circle")
+
+var botSpan = document.querySelector("#botbot");
+var hideSpan = document.querySelector("#hidebox");
+
 
 var answers = ["variable", "seven", "object", "boolean", "function", "expression"]
 var quizTime = 0;
@@ -17,9 +22,7 @@ var highScore = 0;
 
 // }
 
-function setTimer() {
-    quizTime = 60;
-}
+
 
 function getScore() {
     var myscore = localStorage.getItem("score");
@@ -40,9 +43,11 @@ function setSccore() {
 }
 
 
-function startTimer() {
-
+function startTimer() {     
+    quizTime = 60;
+   
     var mytimer = setInterval(function () {
+        
         if (quizTime <= 0) {
             clearInterval(mytimer)
             return;
@@ -51,9 +56,17 @@ function startTimer() {
         console.log(quizTime);
 
         timeSpan.textContent =quizTime;
+
+        if(quizTime ===0){
+                console.log("hey")
+                startBtn.disabled =false;
+            }
+
+// put a function in this functions that decriments each time of bad answer
+        
     }, 1000)
    
-
+   
 }
 // or run boolean statemnet for else statement
 
@@ -65,15 +78,24 @@ function gameOver() {
 
 
 function quizStart() {
-    quizTime = 60;
+    
     startBtn.disabled = true;
-    startTimer()
+  
+    startTimer();
     console.log(quizTime) 
+}
+
+function hideandseek(){
+    hideSpan.textContent = ("Hello");
+    document.getElementById("hidebox").style.display= "none"; 
+
 }
 
 
 startBtn.addEventListener("click", quizStart)
 
+botSpan.addEventListener("click",  hideandseek)
+
 console.log(quizTime)
 
-//  init();   
+//  init();
