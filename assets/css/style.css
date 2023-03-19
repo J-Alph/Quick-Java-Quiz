@@ -18,10 +18,12 @@ body{
     text-align: left;
     font-weight: 800;
     font-size: large;
+    color: yellow;
 }
 
 .timer{
     text-align: right;
+    color: rgb(236, 217, 43);
 
 }
 
@@ -34,6 +36,7 @@ body{
     background-color: orange;
     border: 20px;
     margin: 30px;
+    
 }
 
 
