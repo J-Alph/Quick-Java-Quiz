@@ -1,12 +1,10 @@
 var startBtn = document.body.querySelector("#start-btn");
 var timeSpan = document.querySelector("#zerotime");
-
 var areadisplay = document.querySelector("#questionarea")
-var botSpan = document.querySelector("#botbot");
-
-var questionsArray = ["What is JavaScript?", "List one of key Features of Javascript from the options?", "What are the looping structures in Javascript?", "Is Javascript case-sensitive?"]
+var subBtn = document.querySelector("#botbot");
+var questionsArray = ["What is JavaScript?", "Chose the key features of Javascript from the options that are true", "What are the looping structures in Javascript?", "Is Javascript case-sensitive?"]
 var quizTime = 0;
-var highScore = 0;
+var highScore = document.querySelector("#score");
 
 var testquestion = [];
 
@@ -29,7 +27,7 @@ function setSccore() {
 
 
 function startTimer() {     
-    quizTime = 60;
+    quizTime = 30;
    
     var mytimer = setInterval(function () {
         
@@ -40,12 +38,16 @@ function startTimer() {
         quizTime--;
         
 
-        timeSpan.textContent =quizTime;
+        timeSpan.textContent = quizTime;
 
         if(quizTime ===0){
-                console.log("hey")
+                console.log("button disabled")
                 startBtn.disabled =false;
             }
+   
+    if(quizTime <=0)
+    gameOver();
+        
 
 // put a function in this functions that decriments each time of bad answer
         
@@ -56,7 +58,6 @@ function startTimer() {
 // or run boolean statemnet for else statement
 
 function gameOver() {
-    if(quizTime ===0)
         window.alert("Test Over")
 }
 
@@ -83,12 +84,13 @@ function quizStart() {
     
     console.log("testing")
 
-    if(quizTime ===0)
-    window.alert("Test Over")
 }
 
 
 
 startBtn.addEventListener("click", quizStart)
+
+
+
 
 

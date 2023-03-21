@@ -8,7 +8,7 @@ header{
 
 body{
     background-color: rgb(218, 242, 245);
-    justify-content: left;
+    justify-content: center;
     height: 100%;
     width: 100;
 
@@ -18,7 +18,8 @@ body{
     text-align: left;
     font-weight: 800;
     font-size: large;
-    color: yellow;
+    color: rgb(0, 26, 255);
+    
 }
 
 .timer{
@@ -29,6 +30,7 @@ body{
 
 .button{
     size: 20px;
+
 }
 .box{
     width: 70%;
@@ -49,35 +51,6 @@ body{
    text-align: center;
 }
 
-
-
-
-.answerbutton{
-    background-color: greenyellow;
-    width: 130px;
-    height: 100px;
-    text-align: left;
-}
-
-
-.answerbutton:hover{
-    background-color: rgb(255, 78, 47);
-    width: 130px;
-    height: 100px;
-    text-align: left;
-}
-
-
-
-
-.li{
-    margin: 3px;
-    border-radius: .4rem;
-    padding: 3px;
-    background-color: rgb(197, 1, 232);
-    width: 180px;
-
-}
 
 
 @media screen and (max-width: 450px){
