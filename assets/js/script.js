@@ -1,29 +1,14 @@
 var startBtn = document.body.querySelector("#start-btn");
 var timeSpan = document.querySelector("#zerotime");
-var circlegrab = document.querySelector("#circle")
 
-var quest1 = document.querySelector("#question1");
-var quest2 = document.querySelector("#question2");
-var quest3 = document.querySelector("#question3");
-var quest4 = document.querySelector("#question4");
-var quest5 = document.querySelector("#question5");
-
-
-
+var areadisplay = document.querySelector("#questionarea")
 var botSpan = document.querySelector("#botbot");
 
-var answers = ["variable", "seven", "object", "boolean", "function", "expression"]
+var questionsArray = ["What is JavaScript?", "List one of key Features of Javascript from the options?", "What are the looping structures in Javascript?", "Is Javascript case-sensitive?"]
 var quizTime = 0;
-var wins = 0;
-var losses = 0;
 var highScore = 0;
 
-
-
-
-
-
-
+var testquestion = [];
 
 
 function getScore() {
@@ -31,8 +16,6 @@ function getScore() {
     if (myscore) {
 
     }
-
-
 }
 
 function setSccore() {
@@ -55,7 +38,7 @@ function startTimer() {
             return;
         };
         quizTime--;
-        console.log(quizTime);
+        
 
         timeSpan.textContent =quizTime;
 
@@ -73,53 +56,39 @@ function startTimer() {
 // or run boolean statemnet for else statement
 
 function gameOver() {
-
+    if(quizTime ===0)
+        window.alert("Test Over")
 }
 
 // target.listner for choices in text area
 
-function init(){
-    quest1.style.visibility="hidden";
-    quest2.style.visibility="hidden";
-    quest3.style.visibility="hidden";
-    quest4.style.visibility="hidden";
-    quest5.style.visibility="hidden";
-}
 
 
 function quizStart() {
     
     startBtn.disabled = true;
- 
+    
     startTimer();
-    console.log(quizTime) 
 
-    quest1.style.visibility="visible";
-    quest2.style.visibility="hidden";
-    quest3.style.visibility="hidden";
-    quest4.style.visibility="hidden";
-    quest5.style.visibility="hidden";
+    for(var index = 0; index < questionsArray.length; index++);
+
+    var random = Math.floor(Math.random()* questionsArray.length);
+    var randomarray = questionsArray[random]
+
+    testquestion.push(randomarray);
+
+    areadisplay.textContent =randomarray
+
+    console.log(randomarray)
+    
+    console.log("testing")
+
+    if(quizTime ===0)
+    window.alert("Test Over")
 }
 
-function hideandseek(){
-// init();
-    document.getElementById("question1").style.display= "hidden"; 
-    quest2.style.visibility="visbile"; 
-    quest3.style.visibility="visbile";
-    document.getElementById("question3").style.display= "hidden";
-    document.getElementById("question3").style.display= "hidden";
-    quizTime=quizTime-10
-
-}
 
 
 startBtn.addEventListener("click", quizStart)
 
-botSpan.addEventListener("click",  hideandseek)
 
-
-console.log(quizTime)
-
-
-init();
-stop
